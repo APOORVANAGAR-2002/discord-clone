@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Chat from './components/Chat';
 import Sidebar from './components/Sidebar'
+import Login from './Login';
+
+let UserContext = React.createContext();
 
 function App() {
+  let [user, setUser] = useState()
+
   return (
-    <div className="App">
-      <Sidebar />
-      <Chat />
-    </div>
+    <UserContext.Provider value={{ user, setUser }}>
+      <div className="App">
+        <Sidebar />
+        <Chat />
+        <Login />
+      </div>
+    </UserContext.Provider>
   );
 }
 
-export default App;
+export { App, UserContext };

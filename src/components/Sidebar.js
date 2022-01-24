@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 import SidebarChannel from './SidebarChannel';
@@ -10,12 +10,15 @@ import MicIcon from '@mui/icons-material/Mic';
 import HeadsetIcon from '@mui/icons-material/Headset';
 import SettingsIcon from '@mui/icons-material/Settings';
 import './Sidebar.css';
+import { UserContext } from '../App';
 
 function Sidebar() {
+    let { user } = useContext(UserContext)
+    
     return (
         <div className="sidebar">
             <div className="sidebar_top">
-                <h3>Username</h3>
+                <h3>{user ? user.displayName: undefined}</h3>
                 <ExpandMoreIcon />
             </div>
 
