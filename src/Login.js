@@ -8,7 +8,7 @@ function Login() {
     let { user, setUser } = useContext(UserContext)
 
     useEffect(function () {
-        firebase.auth().onAuthStateChanged((user) => {
+        firebase.auth().onAuthStateChanged(user => {
             setUser(user);
         })
     }, []);

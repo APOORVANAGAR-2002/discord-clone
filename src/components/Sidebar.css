@@ -54,7 +54,7 @@
 .cellular_voiceIcon{
     color: #4fb185;
 }
-.sidebar_voiceInfo h3{
+.sidebar_voiceInfo h4{
     color: #4fb185;
 }
 .sidebar_voiceInfo p{
@@ -67,13 +67,20 @@
 }
 .sidebar_voiceIcons .MuiSvgIcon-root{
     padding: 10px;
+    font-size: medium;
+}
+.sidebar_profileAvatar{
+    cursor: pointer;
 }
 .sidebar_profileInfo{
     flex: 1;
     padding: 10px
 }
-.sidebar_profileInfo h3{
+.sidebar_profileInfo h5{
     color: white;
+}
+.sidebar_profileInfo p{
+    font-size: small;
 }
 .sidebar_profileIcons .MuiSvgIcon-root{
     padding: 10px;

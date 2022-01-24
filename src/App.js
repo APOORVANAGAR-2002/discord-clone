@@ -12,9 +12,12 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
-        <Sidebar />
-        <Chat />
-        <Login />
+        {user ? (<>
+          <Sidebar />
+          <Chat />
+        </>) : (
+          <Login />
+        )}
       </div>
     </UserContext.Provider>
   );

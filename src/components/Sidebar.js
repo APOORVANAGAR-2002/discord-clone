@@ -11,6 +11,9 @@ import HeadsetIcon from '@mui/icons-material/Headset';
 import SettingsIcon from '@mui/icons-material/Settings';
 import './Sidebar.css';
 import { UserContext } from '../App';
+import { firebase } from "../utils/firebase";
+import 'firebase/compat/auth';
+
 
 function Sidebar() {
     let { user } = useContext(UserContext)
@@ -42,7 +45,7 @@ function Sidebar() {
             <div className='sidebar_voice'>
                 <SignalCellularAltIcon className='cellular_voiceIcon' fontSize='large' />
                 <div className='sidebar_voiceInfo'>
-                    <h3>Voice connected</h3>
+                    <h4>Voice connected</h4>
                     <p>Stream</p>
                 </div>
                 <div className='sidebar_voiceIcons'>
@@ -52,10 +55,10 @@ function Sidebar() {
             </div>
             {/* SIdebar section-3 */}
             <div className='sidebar_profile'>
-                <Avatar className='sidebar_profileAvatar' />
+                <Avatar className='sidebar_profileAvatar' onClick={() => firebase.auth().signOut()} src={user.photo }/>
                 <div className='sidebar_profileInfo'>
-                    <h3>Username</h3>
-                    <p>#id</p>
+                    <h5>{user.displayName }</h5>
+                    <p>#{user.uid.substring(0, 5)}</p>
                 </div>
                 <div className='sidebar_profileIcons'>
                     <MicIcon fontSize='small' />
